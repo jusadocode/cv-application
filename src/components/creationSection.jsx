@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import '../App.css'
+import '../styles/App.css'
 
 import GeneralSection from './generalSection'
 import EducationSection from './educationSection'
 import PracticalSection from './practicalSection'
 
-function CreationSection() {
+function CreationSection({setGeneralInfo, setEduInfo, setPracticalInfo, generalInfo, eduInfo, practicalInfo}) {
 
-  const [eduAmount, setEduAmount] = useState(1);
-  const [practicalAmount, setPracticalAmount] = useState(1);
+  const [eduAmount, setEduAmount] = useState(eduInfo.length || 1);
+  const [practicalAmount, setPracticalAmount] = useState(practicalInfo.length || 1);
 
   const addEduSection = () => {
     setEduAmount(eduAmount + 1);
@@ -19,10 +19,20 @@ function CreationSection() {
   };
 
   const removeEduSection = () => {
+    if(eduInfo.length === eduAmount) {
+      eduInfo = eduInfo.splice(eduInfo.length - 2, 1);
+      setEduInfo(eduInfo);
+    }
+      
     setEduAmount(eduAmount - 1);
   };
 
   const removePracticalSection = () => {
+    if(practicalInfo.length === practicalAmount) {
+      practicalInfo = practicalInfo.splice(practicalInfo.length - 2, 1);
+      setEduInfo(practicalInfo);
+    }
+      
     setPracticalAmount(practicalAmount - 1);
   };
 
@@ -37,10 +47,13 @@ function CreationSection() {
       <h4>
         General
       </h4>
-        <GeneralSection>
+      <div className="section">
+      <GeneralSection generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} >
                 
-        </GeneralSection>
+      </GeneralSection>
     
+      </div>
+        
     </div>
     
     <div className='section-wrapper'>
@@ -50,7 +63,7 @@ function CreationSection() {
       <div className="section">
       {
         Array.from({length: eduAmount}).map((a, index) => 
-          <EducationSection key={index}/>
+          <EducationSection key={index} index={index} eduInfo={eduInfo} setEduInfo={setEduInfo}/>
         )
         
       }
@@ -75,7 +88,7 @@ function CreationSection() {
       <div className='section'>
       {
         Array.from({length: practicalAmount}).map((a, index) => 
-          <PracticalSection key={index}/>
+          <PracticalSection key={index} index={index} practicalInfo={practicalInfo} setPracticalInfo={setPracticalInfo}/>
         )
       }
       {
