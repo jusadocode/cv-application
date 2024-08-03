@@ -10,7 +10,10 @@ function App() {
       <CreationSection>
 
       </CreationSection>
+
+      <button>Submit CV</button>
     </>
+    
   )
 }
 

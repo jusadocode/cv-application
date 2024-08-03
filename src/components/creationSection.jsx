@@ -5,9 +5,6 @@ import GeneralSection from './generalSection'
 import EducationSection from './educationSection'
 import PracticalSection from './practicalSection'
 
-
-
-
 function CreationSection() {
 
   const [eduAmount, setEduAmount] = useState(1);
@@ -37,12 +34,12 @@ function CreationSection() {
 
     <div className='section-wrapper'>
 
-    <h4>
-      General
-    </h4>
-      <GeneralSection>
-              
-      </GeneralSection>
+      <h4>
+        General
+      </h4>
+        <GeneralSection>
+                
+        </GeneralSection>
     
     </div>
     
@@ -55,15 +52,19 @@ function CreationSection() {
         Array.from({length: eduAmount}).map((a, index) => 
           <EducationSection key={index}/>
         )
+        
+      }
+      {
+        <div className="button-section">
+          <button onClick={addEduSection} className="add-button">Add another</button>
+          {
+            eduAmount > 1 ? <button onClick={removeEduSection} className="add-button">Remove</button> : ''
+          }
+        </div>
       }
       </div>
       
-      <div className="button-section">
-        <button onClick={addEduSection} className="add-button">Add another</button>
-        {
-          eduAmount > 1 ? <button onClick={removeEduSection} className="add-button">Remove</button> : ''
-        }
-      </div>
+      
     
     </div>
 
@@ -77,15 +78,16 @@ function CreationSection() {
           <PracticalSection key={index}/>
         )
       }
-      </div>
-      
-      <div className="button-section">
+      {
+        <div className="button-section">
         <button onClick={addPracticalSection} className="add-button">Add another</button>
         {
           practicalAmount > 1 ? <button onClick={removePracticalSection} className="add-button">Remove</button> : ''
         }
       </div>
-
+      }
+      </div>
+    
     </div>
 
     </>
