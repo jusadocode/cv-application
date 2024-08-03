@@ -4,7 +4,7 @@ import '../App.css'
 function EducationSection() {
     return (
         <>
-        <div className='section'style={{display: 'flex', flexDirection:'column'}}>
+        <div className='section-input-card'style={{display: 'flex', flexDirection:'column'}}>
           <label htmlFor="school">School name:</label>
           <input type="text" name='school' />
     
@@ -16,7 +16,6 @@ function EducationSection() {
           <label htmlFor="end-date">Finished on:</label>
           <input type="date" name='study-date'/>
 
-          <button className="add-button">Add another</button>
           
         </div>
         </>
