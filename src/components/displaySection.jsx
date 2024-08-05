@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import '../styles/DisplaySection.css'
 
-import photo from'../assets/react.svg'
+import photo from'../assets/user.png'
 
 function DisplaySection({generalInfo, eduInfo, practicalInfo}) {
     return (
@@ -15,69 +15,69 @@ function DisplaySection({generalInfo, eduInfo, practicalInfo}) {
                 </div>
 
                 <div className="about-section">
-                <h2>About</h2>
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, 
-                    as opposed to using 'Content here, content here', making it look like readable English.
+                    <h2>About</h2>
+                    <p>{generalInfo.description}</p>
                 </div>
 
                 <div className="contact-section">
                     <h3>Contact Info</h3>
-                    <p>justas.ado@gmail.com</p>
-                    <p>+37063614989</p>
+                    <p>{generalInfo['e-mail']}</p>
+                    <p>Tel: {generalInfo.phone}</p>
                 </div>
 
             </div>
             <div className="right-side">
 
                 <div className="name-section">
-                    <h2>Justas Adomaitis</h2>
-                    <h3>Front End Developer</h3>
+                    <h2>{generalInfo.name}</h2>
+                    <h5>{generalInfo.title}</h5>
                 </div>
                 <div className="education-section">
                     <h2>Education</h2>
+                    {
+                        eduInfo.map((a, index) => (
+                            <div className="education-block" key={index}>
+                                <div className="time-section">
+                                    <p style={{fontWeight: 'bold'}}>{eduInfo[index]['study-start']}</p>
+                                    <p style={{fontWeight: 'bold'}}>{eduInfo[index]['study-end']}</p>
+                                </div>
+                                
+                                <div className="info-section">
+                                    <h3>{eduInfo[index].school}</h3>
+                                    <h4 style={{fontWeight: 'bold'}}>{eduInfo[index].field}</h4>
+                                    <p>{eduInfo[index].summary}</p>
 
-                    <div className="education-block">
-                        <div className="time-section">
-                            <p style={{fontWeight: 'bold'}}>2021-04</p>
-                            <p style={{fontWeight: 'bold'}}>2022-03</p>
-                        </div>
-                        
-                        <div className="info-section">
-                            <p style={{fontWeight: 'bold'}}>Kaunas university Of Technology</p>
-                            <p>Computer Science</p>
-                        </div>
+                                </div>
 
-                        
-                    </div>
+                            </div>
+                        ))
+                    }
+                    
                 </div>
 
                 <div className="practical-section">
-
                     <h2>Practical Experience</h2>
+                    {
+                        practicalInfo.map((a, index) => (
+                            <div className="practical-block" key={index}>
+                                <div className="time-section">
+                                    <p style={{fontWeight: 'bold'}}>{practicalInfo[index]['work-start']}</p>
+                                    <p style={{fontWeight: 'bold'}}>{practicalInfo[index]['work-end']}</p>
+                                </div>
+                                
+                                <div className="info-section">
+                                    <h3 >{practicalInfo[index].name}</h3>
+                                    <h4 style={{fontWeight: 'bold'}}>{practicalInfo[index].position}</h4>
+                                    <p>{practicalInfo[index].responsibilities}</p>
+                                </div>
 
-                    <div className="practical-block">
-                        <div className="time-section">
-                            <p style={{fontWeight: 'bold'}}>2021-04</p>
-                            <p style={{fontWeight: 'bold'}}>2022-03</p>
-                        </div>
-                        
-                        <div className="info-section">
-                            <p style={{fontWeight: 'bold'}}>Telia Lithuania</p>
-                            <p>Customer Support Specialist</p>
-                        </div>
+                            </div>
+                        ))
+                    }
 
-                        
-                    </div>
-
-                    
-                    
                 </div>
             </div>
             
-
-            
-
         </div>
 
         </>

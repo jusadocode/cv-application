@@ -11,29 +11,33 @@ function CreationSection({setGeneralInfo, setEduInfo, setPracticalInfo, generalI
   const [practicalAmount, setPracticalAmount] = useState(practicalInfo.length || 1);
 
   const addEduSection = () => {
-    setEduAmount(eduAmount + 1);
+    const newEduInfo = [...eduInfo, {}];
+
+    setEduInfo(newEduInfo);
+    setEduAmount(newEduInfo.length);
+
   };
 
   const addPracticalSection = () => {
-    setPracticalAmount(practicalAmount + 1);
+    const newPracticalInfo = [...practicalInfo, {}];
+    setPracticalInfo(newPracticalInfo);
+    setPracticalAmount(newPracticalInfo.length);
   };
 
   const removeEduSection = () => {
-    if(eduInfo.length === eduAmount) {
-      eduInfo = eduInfo.splice(eduInfo.length - 2, 1);
-      setEduInfo(eduInfo);
+    if (eduAmount > 1) {
+      const newEduInfo = eduInfo.slice(0, -1); 
+      setEduInfo(newEduInfo);
+      setEduAmount(newEduInfo.length);
     }
-      
-    setEduAmount(eduAmount - 1);
   };
 
   const removePracticalSection = () => {
-    if(practicalInfo.length === practicalAmount) {
-      practicalInfo = practicalInfo.splice(practicalInfo.length - 2, 1);
-      setEduInfo(practicalInfo);
+    if (practicalAmount > 1) {
+      const newPracticalInfo = practicalInfo.slice(0, -1);
+      setPracticalInfo(newPracticalInfo);
+      setPracticalAmount(newPracticalInfo.length);
     }
-      
-    setPracticalAmount(practicalAmount - 1);
   };
 
   return (

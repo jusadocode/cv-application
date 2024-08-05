@@ -59,7 +59,7 @@ h4 {
   border: 1px solid gray;
   animation: section-fade ease-in-out 0.6s;
   display: grid;
-  grid-template-columns: 0.5fr 2.5fr;
+  grid-template-columns: 1fr 2fr;
   text-align: left;
 }
 
@@ -91,7 +91,7 @@ h4 {
 
 .right-side > *,
 .left-side > * {
-  margin: 3rem;
+  margin: 1.5rem;
 }
 
 .name-section p {
@@ -112,5 +112,10 @@ h4 {
 .time-section {
   white-space: nowrap;
 }
+
+.about-section {
+  font-size: 0.8rem;
+}
+
 
 

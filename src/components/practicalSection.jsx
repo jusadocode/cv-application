@@ -17,19 +17,19 @@ function PracticalSection({index, practicalInfo, setPracticalInfo}) {
         <>
         <div className='section-input-card'>
           <label htmlFor="name">Company name:</label>
-          <input type="text" name='name' onChange={handleChange}/>
+          <input type="text" name='name' onChange={handleChange} value={practicalInfo[index].name}/>
     
-          <label htmlFor="e-mail">Position:</label>
-          <input type="email" name='e-mail' onChange={handleChange}/>
+          <label htmlFor="position">Position:</label>
+          <input type="email" name='position' onChange={handleChange} value={practicalInfo[index].position}/>
 
-          <label htmlFor="resp">Responsibilities:</label>
-          <input type="text" name='resp' onChange={handleChange}/>
+          <label htmlFor="responsibilities">Responsibilities:</label>
+          <input type="text" name='responsibilities' onChange={handleChange} value={practicalInfo[index].responsibilities}/>
 
-          <label htmlFor="start-date">Started on:</label>
-          <input type="date" name='work-start' onChange={handleChange}/>
+          <label htmlFor="work-start">Started on:</label>
+          <input type="date" name='work-start' onChange={handleChange} value={practicalInfo[index]['work-start']}/>
 
-          <label htmlFor="end-date">Finished on:</label>
-          <input type="date" name='work-end' onChange={handleChange}/>
+          <label htmlFor="work-end">Finished on:</label>
+          <input type="date" name='work-end' onChange={handleChange}  value={practicalInfo[index]['work-end']}/>
         </div>
         </>
       )

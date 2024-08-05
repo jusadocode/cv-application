@@ -19,16 +19,19 @@ function EducationSection({index, eduInfo, setEduInfo}) {
         <>
         <div className='section-input-card'>
           <label htmlFor="school">School name:</label>
-          <input type="text" name='school' onChange={handleChange}/>
+          <input type="text" name='school' onChange={handleChange} value={eduInfo[index].school}/>
 
           <label htmlFor="field">Field:</label>
-          <input type="email" name='field' onChange={handleChange}/>
+          <input type="email" name='field' onChange={handleChange} value={eduInfo[index].field}/>
 
+          <label htmlFor="summary">Things learned:</label>
+          <input type="text" name='summary' onChange={handleChange} value={eduInfo[index].summary}/>
+          
           <label htmlFor="start-date">Started on:</label>
-          <input type="date" name='study-start' onChange={handleChange}/>
+          <input type="date" name='study-start' onChange={handleChange} value={eduInfo[index]['study-start']}/>
 
           <label htmlFor="end-date">Finished on:</label>
-          <input type="date" name='study-end' onChange={handleChange}/>
+          <input type="date" name='study-end' onChange={handleChange} value={eduInfo[index]['study-end']}/>
 
           
         </div>
