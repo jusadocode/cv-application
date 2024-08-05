@@ -1,0 +1,116 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.card {
+  padding: 2em;
+}
+
+.section {
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 3rem;
+}
+
+@keyframes section-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+label {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+h4 {
+  text-align: left;
+  font-weight: normal;
+  margin: 0;
+  color: #888;
+}
+
+.section-wrapper {
+  display: block;
+  margin-top: 1.5rem;
+  animation: section-fade ease-in-out 0.3s;
+}
+
+.add-button {
+  transition: border-color 0.25s;
+  margin-top: 2rem;
+}
+
+.main-grid-container {
+  max-width: 600px;
+  border: 1px solid gray;
+  animation: section-fade ease-in-out 0.6s;
+  display: grid;
+  grid-template-columns: 0.5fr 2.5fr;
+  text-align: left;
+}
+
+
+.photo-section {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-section img{
+  width: 70%;
+  border-radius: 50%;
+}
+
+.left-side {
+  background-color: #313131;
+}
+
+.right-side {
+  background-color: #c5c5c5;
+  color: #313131;
+}
+
+/* .left-side > :nth-child(n+2),
+.right-side > :nth-child(n+2){
+  border-top: 1px solid gray;
+} */
+
+
+.right-side > *,
+.left-side > * {
+  margin: 3rem;
+}
+
+.name-section p {
+   margin: 0 !important; 
+}
+
+.education-block,
+.practical-block {
+  display: flex;
+  gap: 3rem;
+}
+
+.info-section {
+  position: relative;
+  
+}
+
+.time-section {
+  white-space: nowrap;
+}
+
+
