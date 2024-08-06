@@ -95,13 +95,13 @@ function DisplaySection({generalInfo, eduInfo, practicalInfo}) {
                             <div className="practical-block" key={index}>
                                 <div className="time-section">
                                     <p style={{fontWeight: 'bold'}}>{formatDate(practicalInfo[index]['work-start'])}</p>
-                                    <p style={{fontWeight: 'bold'}}>|</p>
+                                    <p>|</p>
                                     <p style={{fontWeight: 'bold'}}>{formatDate(practicalInfo[index]['work-end'])}</p>
                                 </div>
                                 
                                 <div className="info-section">
                                     <h3 >{practicalInfo[index].name}</h3>
-                                    <h4 >{practicalInfo[index].position}</h4>
+                                    <h4 style={{fontWeight: 'bold'}}>{practicalInfo[index].position}</h4>
                                     <p>{practicalInfo[index].responsibilities}</p>
                                 </div>
 
